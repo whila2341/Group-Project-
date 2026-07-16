@@ -11,7 +11,7 @@ class Order(Base):
     customer_name = Column(String(100), nullable=False)
     phone_number = Column(String(20), nullable=False)
     delivery_or_takeout = Column(String(20), nullable=False, server_default="takeout")
-    delivery_address = Column(String(300))
+    delivery_address = Column(String(300), nullable=True)
     summary = Column(String(300))
     order_date = Column(DATETIME, nullable=False, server_default=str(datetime.now()))
     promo_code_id = Column(Integer, ForeignKey("promo_codes.id"), nullable=True)
