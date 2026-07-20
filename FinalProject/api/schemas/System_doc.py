@@ -18,3 +18,8 @@ class SystemDocumentationResponse(SystemDocumentationBase):
 
     class Config:
         from_attributes = True
+
+class SystemDocumentationUpdate(BaseModel):
+    title: str | None = None
+    category: str | None = None
+    content: str | None = None

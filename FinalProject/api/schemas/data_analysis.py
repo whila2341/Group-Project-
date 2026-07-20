@@ -11,10 +11,14 @@ class DataAnalysisBase(BaseModel):
 class DataAnalysisCreate(DataAnalysisBase):
     pass
 
-
 class DataAnalysisResponse(DataAnalysisBase):
     id: int
     generated_at: datetime
 
     class Config:
         from_attributes = True
+
+class DataAnalysisUpdate(BaseModel):
+    report_name: str | None = None
+    metric: str | None = None
+    value: float | None = None
